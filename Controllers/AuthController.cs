@@ -30,7 +30,7 @@ namespace JwtRoleBased.Controllers
 
 
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(UserDto request)
+        public async Task<ActionResult<TokenResponseDto>> Login(UserDto request)
         {
             var token = await service.Login(request);
             if (token is null)
@@ -38,6 +38,15 @@ namespace JwtRoleBased.Controllers
             return Ok(token);
         }
 
+        [HttpPost("referesh-token")]
+        public async Task<ActionResult<TokenResponseDto>> RefreshToken(RefreshTokenRequestDto request)
+        {
+            var token = await service.RefreshTokenAsync(request);
+            if (token is null)
+                return BadRequest("Invalid/expired refresh token");
+            return Ok(token);
+        }
+       
 
         [HttpGet("Auth-endpoint")]
         [Authorize]

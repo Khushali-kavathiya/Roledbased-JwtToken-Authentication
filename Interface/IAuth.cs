@@ -6,7 +6,8 @@ namespace JwtRoleBased.Interface
     public interface IAuth
     {
         Task<User?> Register(UserDto request);
-        Task<string> Login(UserDto request);
+        Task<TokenResponseDto?> RefreshTokenAsync(RefreshTokenRequestDto request);
+        Task<TokenResponseDto> Login(UserDto request);
     }
 
 }
