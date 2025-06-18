@@ -46,3 +46,6 @@
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Npgsql.dll
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/System.CodeDom.dll
+/Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
