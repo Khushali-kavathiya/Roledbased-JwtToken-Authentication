@@ -1,70 +1,58 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using JwtRoleBased.Entities;
-using Microsoft.AspNetCore.Identity;
 using JwtRoleBased.Model;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-
+using JwtRoleBased.Interface;
 
 namespace JwtRoleBased.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
     public class AuthController : ControllerBase
     {
-        private static User user = new();
-        private readonly IConfiguration configuration;
-         public AuthController(IConfiguration configuration)
+        private readonly IAuth service;
+        public AuthController(IAuth service)
         {
-            this.configuration = configuration;
+            this.service = service;
         }
+
 
         [HttpPost("register")]
-
-        public ActionResult<User> Register(UserDto request)
+        public async Task<ActionResult<User>> Register(UserDto request)
         {
-            user.Username = request.Username;
-            user.PasswordHash = new PasswordHasher<User>().HashPassword(user, request.Password);
-            return Ok(user);
+            var User = await service.Register(request);
+            if (User == null)
+            {
+                return BadRequest("User already exists");
+            }
+            return Ok(User);
         }
 
-        [HttpPost("login")]
 
-        public ActionResult<string> Login(UserDto request)
+        [HttpPost("login")]
+        public async Task<ActionResult<string>> Login(UserDto request)
         {
-            if (user.Username != request.Username)
-            {
-                return BadRequest("User not found");
-            }
-            if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password) == PasswordVerificationResult.Failed)
-            {
-                return BadRequest("Wrong password");
-            }
-            string token = CreateToken(user);
+            var token = await service.Login(request);
+            if (token is null)
+                return BadRequest("Invalid credentials");
             return Ok(token);
         }
 
-        private string CreateToken(User user)
+
+        [HttpGet("Auth-endpoint")]
+        [Authorize]
+        public ActionResult AuthCkeck()
         {
-            var Claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.Username)
-            };
-            var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(configuration.GetValue<string>("AppSettings:Token")!));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
-            var tokenDescriptor = new JwtSecurityToken(
-                issuer: configuration.GetValue<string>("AppSettings:Issuer"),
-                audience: configuration.GetValue<string>("AppSettings:Audience"),
-                claims: Claims,
-                expires: DateTime.Now.AddDays(7),
-                signingCredentials: creds
-            );
-            return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
+            return Ok();
         }
+
+        [HttpGet("Admin-endpoint")]
+        [Authorize(Roles = "Admin")]
+        public ActionResult AdminCheck()
+        {
+            return Ok("You are an admin");
+        }
+
     }
 
 }
