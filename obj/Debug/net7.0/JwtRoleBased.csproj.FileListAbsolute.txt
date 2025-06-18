@@ -1,3 +1,10 @@
+/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.csproj.AssemblyReference.cache
+/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.GeneratedMSBuildEditorConfig.editorconfig
+/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.AssemblyInfoInputs.cache
+/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.AssemblyInfo.cs
+/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.csproj.CoreCompileInputs.cache
+/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.MvcApplicationPartsAssemblyInfo.cs
+/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.MvcApplicationPartsAssemblyInfo.cache
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/appsettings.Development.json
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/appsettings.json
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/JwtRoleBased
@@ -10,13 +17,6 @@
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/khushalikavathiya/Projects/JwtRoleBased/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.csproj.AssemblyReference.cache
-/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.GeneratedMSBuildEditorConfig.editorconfig
-/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.AssemblyInfoInputs.cache
-/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.AssemblyInfo.cs
-/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.csproj.CoreCompileInputs.cache
-/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.MvcApplicationPartsAssemblyInfo.cs
-/Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/JwtRoleBased.MvcApplicationPartsAssemblyInfo.cache
 /Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/staticwebassets/msbuild.JwtRoleBased.Microsoft.AspNetCore.StaticWebAssets.props
 /Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/staticwebassets/msbuild.build.JwtRoleBased.props
 /Users/khushalikavathiya/Projects/JwtRoleBased/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.JwtRoleBased.props
