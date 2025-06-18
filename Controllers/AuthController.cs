@@ -44,7 +44,7 @@ namespace JwtRoleBased.Controllers
                 return BadRequest("Wrong password");
             }
             string token = CreateToken(user);
-            return Ok(user);
+            return Ok(token);
         }
 
         private string CreateToken(User user)
