@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "diItWflKYe2tVfa74SmOVJkG4RmS1Q01ji8wnoORX76kPoSqh2VBJb/UeDJve0EVz+vXn/58xHDdtTOe4C35jg==",
+  "dgSpecHash": "rFgPoHGRcpbCbs7OSyOPWHwBKIW6EyF6JYbXR0I+P5GyRzdN17AKhjrsku9fMQd2+0j44obR4C7dc6TyqYoV4A==",
   "success": true,
   "projectFilePath": "/Users/khushalikavathiya/Projects/JwtRoleBased/JwtRoleBased.csproj",
   "expectedPackageFiles": [
@@ -42,16 +42,5 @@
     "/Users/khushalikavathiya/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/khushalikavathiya/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "JwtRoleBased depends on Npgsql.EntityFrameworkCore.PostgreSQL (>= 7.0.5) but Npgsql.EntityFrameworkCore.PostgreSQL 7.0.5 was not found. An approximate best match of Npgsql.EntityFrameworkCore.PostgreSQL 7.0.11 was resolved.",
-      "libraryId": "Npgsql.EntityFrameworkCore.PostgreSQL",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

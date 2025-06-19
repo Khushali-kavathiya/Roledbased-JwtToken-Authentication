@@ -33,7 +33,7 @@ namespace JwtRoleBased.Services
             var user = new User();
             user.Username = request.Username;
             user.Role = request.Role;
-            user.PasswordHash = new PasswordHasher<User>().HashPassword(user, request.Password);
+            user.PasswordHash = new PasswordHasher<User>().HashPassword(user, request.Password!);
             await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
             return user;
@@ -42,11 +42,11 @@ namespace JwtRoleBased.Services
 
         public async Task<TokenResponseDto> Login(UserDto request)
         {
-            User? user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
+            User? user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username && u.Role == request.Role);
             if (user == null)
-                return null;
-            if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password) == PasswordVerificationResult.Failed)
-                return null;
+                return null!;
+            if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash!, request.Password!) == PasswordVerificationResult.Failed)
+                return null!;
             var token = new TokenResponseDto
             {
                 AccessToken = CreateToken(user),
@@ -70,9 +70,9 @@ namespace JwtRoleBased.Services
         {
             var Claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Name, user.Username!),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role, user.Role!)
             };
             var key = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(configuration.GetValue<string>("AppSettings:Token")!));
